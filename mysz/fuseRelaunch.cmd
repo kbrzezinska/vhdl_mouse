@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/Users/Lenovooo/Desktop/mysz/PS2_TX_test_isim_beh.exe" -prj "C:/Users/Lenovooo/Desktop/mysz/PS2_TX_test_beh.prj" "work.PS2_TX_test" 
