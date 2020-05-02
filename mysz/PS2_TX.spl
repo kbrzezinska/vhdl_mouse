@@ -1,0 +1,13 @@
+[Inputs]
+clk
+reset
+wr_ps2
+ps2c_in
+ps2d_in
+=din[7:0]=
+[Outputs]
+ps2c_out
+ps2d_out
+tx_done_tick
+tx_idle
+[BiDir]

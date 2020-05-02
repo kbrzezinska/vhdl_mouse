@@ -57,8 +57,8 @@ ARCHITECTURE behavior OF PS2_TX_test IS
 
    --Inputs
    signal clk : std_logic := '0';
-   signal reset : std_logic := '1';
-   signal din : std_logic_vector(7 downto 0) := "00110011";---(others => '0');
+   signal reset : std_logic := '0';
+   signal din : std_logic_vector(7 downto 0) := "01101010";---(others => '0');
    signal wr_ps2 : std_logic := '1';
    signal ps2c_in : std_logic := '0';
    signal ps2d_in : std_logic := '0';
@@ -70,7 +70,7 @@ ARCHITECTURE behavior OF PS2_TX_test IS
    signal tx_idle : std_logic;
 
    -- Clock period definitions
-   constant clk_period : time := 10 ns;
+   constant clk_period : time := 50 ns;
  
 BEGIN
  
@@ -104,19 +104,19 @@ BEGIN
 
    stim_proc: process
    begin
-		reset<='0' after 10 us;
-      ps2d_in <= 'Z';
-      ps2c_in  <= 'Z';
+		--reset<='0' after 10 us;
+      ps2d_in <= '1';
+      ps2c_in  <= '1';
       loop
-         wait until ps2c_in'Delayed'Last_event > 100 us  and  ps2c_in'Last_value = '0';
+         wait until ps2c_out'Delayed'Last_event > 50 us  and  ps2c_out'Last_value = '0';
          -- 10 bits sent by the host
          for i in 1 to 10 loop
-            ps2c_in <= '0' after 50 us, 'Z' after 100 us;
+            ps2c_in <= '0' after 50 us, '1' after 100 us;
             wait for 100 us;
          end loop;
          -- ACK sent by the device
-         ps2c_in  <= '0' after 50 us, 'Z' after 100 us;
-         ps2d_in <= '0' after 50 us, 'Z' after 100 us;
+         ps2c_in  <= '0' after 50 us, '1' after 100 us;
+         ps2d_in <= '0' after 50 us, '1' after 100 us;
          wait for 100 us;
       end loop;
    end process;

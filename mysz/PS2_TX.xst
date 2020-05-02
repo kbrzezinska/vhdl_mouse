@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/Lenovooo/Desktop/mysz/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/Lenovooo/Desktop/mysz/xst"
+elaborate
+-ifn PS2_TX.prj
+-ifmt mixed

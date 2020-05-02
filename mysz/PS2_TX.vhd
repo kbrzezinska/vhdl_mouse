@@ -151,7 +151,7 @@ fall_edge <= f_ps2c_reg and (not f_ps2c_next);
 				
 
 				when stop=>
-				if fall_edge ='1' and ps2d_in='0' then
+				if fall_edge ='1' then
 					state_next<= idle;
 					tx_done_tick <='1';
 				end if;
