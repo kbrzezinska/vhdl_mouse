@@ -108,7 +108,7 @@ BEGIN
       ps2d_in <= '1';
       ps2c_in  <= '1';
       loop
-         wait until ps2c_out'Delayed'Last_event > 50 us  and  ps2c_out'Last_value = '0';
+         wait until ps2c_out'Delayed'Last_event > 100 us  and  ps2c_out'Last_value = '0';
          -- 10 bits sent by the host
          for i in 1 to 10 loop
             ps2c_in <= '0' after 50 us, '1' after 100 us;

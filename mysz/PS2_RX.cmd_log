@@ -1,0 +1,2 @@
+vhdtdtfi -lib work PS2_RX.vhd -prj mysz -o PS2_RX.spl -module PS2_RX -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3a PS2_RX.spl C:/Users/Lenovooo/Desktop/mysz/PS2_RX.sym 

@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -o "C:/Users/Lenovooo/Desktop/mysz/PS2_TX_test_isim_beh.exe" -prj "C:/Users/Lenovooo/Desktop/mysz/PS2_TX_test_beh.prj" "work.PS2_TX_test" 
+-intstyle "ise" -incremental -o "C:/Users/Lenovooo/Desktop/mysz/schemat_schemat_sch_tb_isim_beh.exe" -prj "C:/Users/Lenovooo/Desktop/mysz/schemat_schemat_sch_tb_beh.prj" "work.schemat_schemat_sch_tb" 

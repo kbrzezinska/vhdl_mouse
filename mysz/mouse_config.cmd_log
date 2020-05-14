@@ -1,0 +1,2 @@
+vhdtdtfi -lib work mouse_config.vhd -prj mysz -o mouse_config.spl -module mouse_config -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3a mouse_config.spl C:/Users/Lenovooo/Desktop/mysz/mouse_config.sym 
