@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/Users/Lenovooo/Desktop/mysz/schemat_schemat_sch_tb_isim_beh.exe" -prj "C:/Users/Lenovooo/Desktop/mysz/schemat_schemat_sch_tb_beh.prj" "work.schemat_schemat_sch_tb" 
