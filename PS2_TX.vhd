@@ -125,9 +125,13 @@ fall_edge <= f_ps2c_reg and (not f_ps2c_next);
 				ps2c_out<='0'; ---ps2c host=0 przez >100us ,=> disable mouse
 				tri_c<= '1';
 				c_next<=c_reg-1;
-				if(c_reg=0) then
+				if (c_reg <= "0000000001111" and c_reg>0) then -- poprawka wczesniejsza zmiana ps2d mouse
+					ps2d_out<='0';
+				
+				elsif(c_reg=0) then
+					ps2d_out<='0';
 					state_next<= start;
-			end if;
+				end if;
 					
 			when start=>
 				ps2d_out<='0'; ---ps2d host=0 -> starting bit

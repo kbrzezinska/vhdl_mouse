@@ -36,7 +36,7 @@ ARCHITECTURE behavioral OF schemat_schemat_sch_tb IS
    SIGNAL PS_D	:	STD_LOGIC;
    SIGNAL CLK_IN	:	STD_LOGIC :='0';
    SIGNAL RESET_IN	:	STD_LOGIC :='0';
-   SIGNAL WR_IN	:	STD_LOGIC :='1';
+   SIGNAL WR_IN	:	STD_LOGIC :='0';
    SIGNAL DIN_IN	:	STD_LOGIC_VECTOR (7 DOWNTO 0):= "01101010";---(others => '0');;
    SIGNAL TX_DONE_TICK	:	STD_LOGIC;
    SIGNAL TX_IDLE	:	STD_LOGIC;
@@ -49,7 +49,7 @@ BEGIN
 
    UUT: schemat PORT MAP(
 		PS_C => PS_C, 
-		PS_D => PS_D, 
+		PS_D => PS_D,
 		CLK_IN => CLK_IN, 
 		RESET_IN => RESET_IN, 
 		WR_IN => WR_IN, 
@@ -89,4 +89,15 @@ BEGIN
          wait for 100 us;
       end loop;
    end process;
+	
+	process
+	begin
+	wait for 5 us;
+	WR_IN<='1','0' after clk_period;
+	DIN_IN<=x"AA";
+	wait for 2 ms;
+	WR_IN<='1','0' after clk_period;
+	DIN_IN<=x"81";
+	wait for 2 ms;
+	end process;
 END;

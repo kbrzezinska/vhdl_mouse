@@ -76,9 +76,12 @@ begin
 
     case (state_reg) is
       when init1 =>
+		if rx_data = x"00" then --mysz wysyla bit 00 ktory jest id standardu ps2 myszy, przed nim wysylany 
+		--jest bit AA potwierdzsjacy pomyslne przejscie testu wlaczenia myszy
         tx_data <= x"F4";
         wr <= '1';
         state_next <= init2;
+        end if;
 
       -- wait for transmission to complete
       when init2 =>

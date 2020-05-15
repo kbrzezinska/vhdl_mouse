@@ -7,16 +7,25 @@
     </attr>
     <netlist>
         <signal name="XLXN_4" />
+        <signal name="XLXN_5" />
         <signal name="XLXN_7" />
         <signal name="XLXN_11(7:0)" />
         <signal name="XLXN_16(7:0)" />
+        <signal name="XLXN_18" />
+        <signal name="XLXN_21(7:0)" />
         <signal name="PS2_C" />
         <signal name="PS2_D" />
         <signal name="M_DONE_TICK" />
         <signal name="CLK_IN" />
+        <signal name="XLXN_32" />
         <signal name="RESET_IN" />
         <signal name="X(8:0)" />
         <signal name="BTN(2:0)" />
+        <signal name="XLXN_39" />
+        <signal name="XLXN_40(7:0)" />
+        <signal name="XLXN_43" />
+        <signal name="XLXN_44" />
+        <signal name="XLXN_45(7:0)" />
         <signal name="Y(8:0)" />
         <signal name="XLXN_49" />
         <signal name="XLXN_50" />
@@ -24,8 +33,13 @@
         <signal name="XLXN_52" />
         <signal name="XLXN_53" />
         <signal name="XLXN_56" />
+        <signal name="XLXN_57" />
+        <signal name="XLXN_58" />
+        <signal name="XLXN_59(7:0)" />
+        <signal name="XLXN_60(8:0)" />
+        <signal name="XLXN_61(2:0)" />
         <signal name="XLXN_62" />
-        <signal name="XLXN_64" />
+        <signal name="XLXN_63" />
         <port polarity="BiDirectional" name="PS2_C" />
         <port polarity="BiDirectional" name="PS2_D" />
         <port polarity="Output" name="M_DONE_TICK" />
@@ -109,7 +123,7 @@
             <blockpin signalname="CLK_IN" name="Clk_50MHz" />
             <blockpin name="PS2_Clk" />
             <blockpin name="PS2_Data" />
-            <blockpin signalname="XLXN_64" name="rx_en" />
+            <blockpin signalname="XLXN_20" name="rx_en" />
             <blockpin signalname="XLXN_7" name="DO_Rdy" />
             <blockpin signalname="XLXN_16(7:0)" name="DO(7:0)" />
         </block>
@@ -123,7 +137,7 @@
             <blockpin signalname="XLXN_51" name="ps2c_out" />
             <blockpin signalname="XLXN_52" name="ps2d_out" />
             <blockpin signalname="XLXN_62" name="tx_done_tick" />
-            <blockpin signalname="XLXN_64" name="tx_idle" />
+            <blockpin name="tx_idle" />
         </block>
         <block symbolname="mouse_config" name="XLXI_4">
             <blockpin signalname="CLK_IN" name="clk" />
@@ -186,6 +200,14 @@
         </branch>
         <instance x="336" y="1232" name="XLXI_1" orien="R0">
         </instance>
+        <branch name="XLXN_20">
+            <wire x2="336" y1="1200" y2="1200" x1="256" />
+            <wire x2="256" y1="1200" y2="1472" x1="256" />
+            <wire x2="1392" y1="1472" y2="1472" x1="256" />
+            <wire x2="1392" y1="1344" y2="1344" x1="1376" />
+            <wire x2="1392" y1="1344" y2="1360" x1="1392" />
+            <wire x2="1392" y1="1360" y2="1472" x1="1392" />
+        </branch>
         <instance x="1824" y="1136" name="XLXI_5" orien="R0" />
         <instance x="1840" y="1408" name="XLXI_6" orien="R0" />
         <branch name="PS2_C">
@@ -283,13 +305,6 @@
             <wire x2="1488" y1="1744" y2="1744" x1="848" />
             <wire x2="1488" y1="1248" y2="1248" x1="1376" />
             <wire x2="1488" y1="1248" y2="1744" x1="1488" />
-        </branch>
-        <branch name="XLXN_64">
-            <wire x2="336" y1="1200" y2="1200" x1="256" />
-            <wire x2="256" y1="1200" y2="1472" x1="256" />
-            <wire x2="1456" y1="1472" y2="1472" x1="256" />
-            <wire x2="1456" y1="1344" y2="1344" x1="1376" />
-            <wire x2="1456" y1="1344" y2="1472" x1="1456" />
         </branch>
     </sheet>
 </drawing>
