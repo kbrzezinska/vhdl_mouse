@@ -26,6 +26,8 @@
         <signal name="XLXN_56" />
         <signal name="XLXN_62" />
         <signal name="XLXN_64" />
+        <signal name="XLXN_65" />
+        <signal name="XLXN_66" />
         <port polarity="BiDirectional" name="PS2_C" />
         <port polarity="BiDirectional" name="PS2_D" />
         <port polarity="Output" name="M_DONE_TICK" />
@@ -107,8 +109,8 @@
         </blockdef>
         <block symbolname="PS2_RX" name="XLXI_1">
             <blockpin signalname="CLK_IN" name="Clk_50MHz" />
-            <blockpin name="PS2_Clk" />
-            <blockpin name="PS2_Data" />
+            <blockpin signalname="XLXN_66" name="PS2_Clk" />
+            <blockpin signalname="XLXN_65" name="PS2_Data" />
             <blockpin signalname="XLXN_64" name="rx_en" />
             <blockpin signalname="XLXN_7" name="DO_Rdy" />
             <blockpin signalname="XLXN_16(7:0)" name="DO(7:0)" />
@@ -117,8 +119,8 @@
             <blockpin signalname="CLK_IN" name="clk" />
             <blockpin signalname="RESET_IN" name="reset" />
             <blockpin signalname="XLXN_4" name="wr_ps2" />
-            <blockpin signalname="XLXN_53" name="ps2c_in" />
-            <blockpin signalname="XLXN_56" name="ps2d_in" />
+            <blockpin signalname="XLXN_66" name="ps2c_in" />
+            <blockpin signalname="XLXN_65" name="ps2d_in" />
             <blockpin signalname="XLXN_11(7:0)" name="din(7:0)" />
             <blockpin signalname="XLXN_51" name="ps2c_out" />
             <blockpin signalname="XLXN_52" name="ps2d_out" />
@@ -141,13 +143,13 @@
         <block symbolname="iobuf" name="XLXI_5">
             <blockpin signalname="XLXN_50" name="I" />
             <blockpin signalname="PS2_C" name="IO" />
-            <blockpin signalname="XLXN_53" name="O" />
+            <blockpin signalname="XLXN_66" name="O" />
             <blockpin signalname="XLXN_51" name="T" />
         </block>
         <block symbolname="iobuf" name="XLXI_6">
             <blockpin signalname="XLXN_49" name="I" />
             <blockpin signalname="PS2_D" name="IO" />
-            <blockpin signalname="XLXN_56" name="O" />
+            <blockpin signalname="XLXN_65" name="O" />
             <blockpin signalname="XLXN_52" name="T" />
         </block>
         <block symbolname="gnd" name="XLXI_7">
@@ -261,20 +263,6 @@
             <wire x2="1840" y1="1152" y2="1152" x1="1376" />
             <wire x2="1840" y1="1152" y2="1216" x1="1840" />
         </branch>
-        <branch name="XLXN_53">
-            <wire x2="912" y1="976" y2="1248" x1="912" />
-            <wire x2="992" y1="1248" y2="1248" x1="912" />
-            <wire x2="1712" y1="976" y2="976" x1="912" />
-            <wire x2="1712" y1="976" y2="1072" x1="1712" />
-            <wire x2="1824" y1="1072" y2="1072" x1="1712" />
-        </branch>
-        <branch name="XLXN_56">
-            <wire x2="960" y1="992" y2="1312" x1="960" />
-            <wire x2="992" y1="1312" y2="1312" x1="960" />
-            <wire x2="1664" y1="992" y2="992" x1="960" />
-            <wire x2="1664" y1="992" y2="1344" x1="1664" />
-            <wire x2="1840" y1="1344" y2="1344" x1="1664" />
-        </branch>
         <instance x="928" y="2208" name="XLXI_4" orien="R0">
         </instance>
         <branch name="XLXN_62">
@@ -290,6 +278,26 @@
             <wire x2="1456" y1="1472" y2="1472" x1="256" />
             <wire x2="1456" y1="1344" y2="1344" x1="1376" />
             <wire x2="1456" y1="1344" y2="1472" x1="1456" />
+        </branch>
+        <branch name="XLXN_65">
+            <wire x2="336" y1="1136" y2="1136" x1="304" />
+            <wire x2="304" y1="1136" y2="1312" x1="304" />
+            <wire x2="960" y1="1312" y2="1312" x1="304" />
+            <wire x2="992" y1="1312" y2="1312" x1="960" />
+            <wire x2="960" y1="992" y2="1312" x1="960" />
+            <wire x2="1664" y1="992" y2="992" x1="960" />
+            <wire x2="1664" y1="992" y2="1344" x1="1664" />
+            <wire x2="1840" y1="1344" y2="1344" x1="1664" />
+        </branch>
+        <branch name="XLXN_66">
+            <wire x2="336" y1="1072" y2="1072" x1="320" />
+            <wire x2="320" y1="1072" y2="1248" x1="320" />
+            <wire x2="912" y1="1248" y2="1248" x1="320" />
+            <wire x2="992" y1="1248" y2="1248" x1="912" />
+            <wire x2="912" y1="976" y2="1248" x1="912" />
+            <wire x2="1712" y1="976" y2="976" x1="912" />
+            <wire x2="1712" y1="976" y2="1072" x1="1712" />
+            <wire x2="1824" y1="1072" y2="1072" x1="1712" />
         </branch>
     </sheet>
 </drawing>
